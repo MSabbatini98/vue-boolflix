@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: grey;
 
+}
 /************************************************ HEADER */
 header{
     background-color: black;
@@ -56,16 +59,48 @@ label {
 
 /************************************************ MAIN */
 main{
-    height: calc(100vh - 80px);
     max-width: 1500px;
     margin: auto;
     margin-top: 0;
-    background-color: grey;
+}
+.movie_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+/* ????????????????????????????? movie card */
 .movie_card {
     height: 350px;
     width: calc( 20% - 40px);
     border: 2px white solid;
     margin: 20px;
+    padding: 10px;
+}
+
+.movie_card ul li {
+    font-weight: normal;
+    color: white;
+    font-size: 18px;
+    list-style: none;
+    margin: 5px;
+}
+
+.line_clamp4{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.line_clamp2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.line_clamp1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }

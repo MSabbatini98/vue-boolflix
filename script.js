@@ -1,12 +1,27 @@
+//!  url base del query : https://api.themoviedb.org/3
+// ! GET url : /search/movie
+// ! API Key : api_key=44c0abd41cd7f15ce525a6fdbc83e665 
 var app_Vue = new Vue (
     {
         el : "#app_Vue",
         data : {
-            movie : [],
+            movies : [],
+            
+            user_input : "e",
         },
-        mounted : function () {
-            axios.get("something").then((answer) => ) {
-
+        methods : {
+            startSearch() {
+                axios.get("https://api.themoviedb.org/3/search/movie", 
+                    {
+                        params: {
+                            api_key : '44c0abd41cd7f15ce525a6fdbc83e665',
+                            query: this.user_input,
+                        }
+                    // senza arrow function, serve self = this
+                    }).then((answer) => {
+                        this.movies = answer.data.results;
+                    }
+                );
             }
         }
     }

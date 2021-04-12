@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="style.css">
     
 </head>
-
 <body>
 
     <div id="app_Vue">
@@ -33,16 +32,35 @@
                 </div>
                 <div class="search">
                     <label for="search_bar" > Inserisci il film da cercare</label>
-                    <input type="text" id="search_bar" placeholder="Cerca un film">
+                    <input type="text" id="search_bar" placeholder="Cerca un film" v-model = "user_input" @keyup.enter="startSearch">
                     <button @click="startSearch"> Cerca </button>
                 </div>
             </div>
         </header>
 
         <main>
-           <div class="movie_card">
-               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci neque perspiciatis odit? Ut, culpa adipisci voluptatibus doloribus odio, autem omnis commodi dolorem sed dignissimos totam illo. Officiis alias dolores impedit.</p>
-           </div>
+            <div class="movie_container">
+                <div class="movie_card" v-for="movie in movies">
+                    <ul>
+                        <li class="line_clamp2">
+                            <b >Titolo : </b> {{movie.title}}
+                        </li>
+                        <li class="line_clamp2">
+                            <b >Titolo originale : </b> {{movie.original_title}}
+                        </li>
+                        <li>
+                            <b> Lingua </b> : {{movie.original_language}}
+                        </li>
+                        <li>
+                            <b >Voto</b> : {{movie.vote_average}}
+                        </li>
+                        <li class="line_clamp4">
+                            <b >Overview</b> : {{movie.overview}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+           
         </main>
        
     </div>
