@@ -1,4 +1,71 @@
-body{
-    background-color: blue;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/************************************************ HEADER */
+header{
+    background-color: black;
+}
+.header_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1500px;
+    border: blue solid 1px;
+    margin: auto;
+    height: 80px;
+    overflow-y: hidden;
+}
+.logo_img img{
+    height: 250px;
+    margin: -125px 0 0 -100px;
+    transform: scale(0.2);
+    transform: translate(100px, 50px);
+}
+/* ????????????????????????????? search */
+.search{
+    height: 50px;
+    /* background-color: chartreuse; */
+    align-self: center;
+}
+.search input {
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border-color: crimson;
+}
+.search button {
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: bolder;
+    margin-right: 100px;
+    color: crimson;
+
+}
+label {
+    visibility: hidden;
+}
+
+/************************************************ MAIN */
+main{
+    height: calc(100vh - 80px);
+    max-width: 1500px;
+    margin: auto;
+    margin-top: 0;
+    background-color: grey;
+}
+
+.movie_card {
+    height: 350px;
+    width: calc( 20% - 40px);
+    border: 2px white solid;
+    margin: 20px;
+}
