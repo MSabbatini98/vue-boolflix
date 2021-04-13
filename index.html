@@ -39,7 +39,7 @@
         </header>
 
         <main>
-            <div class="movie_container">
+            <div class="movie_container"  v-if="user_input">
                 <div class="movie_card" v-for="movie in movies">
                     <ul>
                         <li class="line_clamp2">
@@ -64,6 +64,10 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+            <div v-else-if="!user_input" class="error_message">
+                <!-- todo add in css -->
+                <h2 > Cerca il film/serie tv ! </h2>
             </div>
            
         </main>
