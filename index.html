@@ -39,29 +39,36 @@
 
         <main>
             <div class="movie_container"  v-if="params.query">
-                <div class="movie_card" v-for="movie in movies">
-                    <ul>
-                        <li class="line_clamp2">
-                            <span v-if ="movie.title">
-                                <b >Titolo : </b> {{movie.title}}
-                            </span> 
-                            <span v-if="movie.name">
-                                AAAAAAAAAAAAAAAAAAAAAAAAAAAA {{movie.name}}
-                            </span>
-                        </li>
-                        <li class="line_clamp2">
-                            <b >Titolo originale : </b> {{movie.original_title}}
-                        </li>
-                        <li>
-                            <b> Lingua </b> : <img class="language" :src="'flags/flag_' + movie.original_language + '.png'" alt="">
-                        </li>
-                        <li>
-                            <b >Voto</b> : {{movie.vote_average}}
-                        </li>
-                        <li class="line_clamp4">
-                            <b >Overview</b> : {{movie.overview}}
-                        </li>
-                    </ul>
+                <div class="card " v-for="movie in movies">
+
+                    <!-- <img src="img/not_found.PNG"> -->
+                    <img class ="poster" :src=" movie.poster_path ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path : 'img/not_found.PNG' " alt=" poster del film di cui il titolo">
+                    <div class="overlay">
+                        <ul >
+                            <li class="line_clamp2">
+                                <span v-if ="movie.title">
+                                    <h3 >Titolo : </h3> {{movie.title}}
+                                </span> 
+                                <span v-if="movie.name">
+                                    AAAAAAAAAAAAAAAAAAAAAAAAAAAA {{movie.name}}
+                                </span>
+                            </li>
+                            <li class="line_clamp2">
+                                <h3 >Titolo originale : </h3> {{movie.original_title}}
+                            </li>
+                            <li>
+                                <h3> Lingua </h3> : 
+                                <img v-if="flags.includes(movie.original_language)" class="language" :src="'flags/flag_' + movie.original_language + '.png'" alt="">
+                                <img v-else src="flags/International_Flag_of_Planet_Earth.svg.png" alt="">
+                            </li>
+                            <li>
+                                <h3 >Voto</h3> : {{movie.vote_average}}
+                            </li>
+                            <li class="line_clamp4">
+                                <h3 >Overview</h3> : {{movie.overview}}
+                            </li>
+                        </ul>
+                    </div>     
                 </div>
             </div>
             <div v-else-if="!params.query" class="error_message">

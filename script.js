@@ -10,12 +10,16 @@ var app_Vue = new Vue (
             show_error : true,
             api_key : '44c0abd41cd7f15ce525a6fdbc83e665',
             language : "it-IT",
-            
             movies : [],
             flag : "",
+            flags : [   'en', 'br', 'cn', 'da', 'de', 'en',
+                        'es', 'fi', 'fr', 'gr', 'it', 'ja', 
+                        'il', 'ko', 'nl', 'ko', 'no', 'pl', 
+                        'pt', 'ru', 'se', 'sv', 'tr'
+            ],
             params: {
                 api_key : '44c0abd41cd7f15ce525a6fdbc83e665',
-                query: "e",
+                query: "",
                 language : "it-IT",
             }
         },
