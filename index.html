@@ -44,28 +44,27 @@
                     <!-- <img src="img/not_found.PNG"> -->
                     <img class ="poster" :src=" movie.poster_path ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path : 'img/not_found.PNG' " alt=" poster del film di cui il titolo">
                     <div class="overlay">
-                        <ul >
+                        <ul>
                             <li class="line_clamp2">
-                                <span v-if ="movie.title">
-                                    <h3 >Titolo : </h3> {{movie.title}}
-                                </span> 
-                                <span v-if="movie.name">
-                                    AAAAAAAAAAAAAAAAAAAAAAAAAAAA {{movie.name}}
-                                </span>
+                                <h3 >Titolo : </h3> 
+                                {{movie.title || movie.name}}
                             </li>
-                            <li class="line_clamp2">
-                                <h3 >Titolo originale : </h3> {{movie.original_title}}
+                            <li class="line_clamp2" v-if="movie.original_title">
+                                <h3 >Titolo originale : </h3> 
+                                {{movie.original_title}}
                             </li>
                             <li>
-                                <h3> Lingua </h3> : 
+                                <h3> Lingua </h3>
                                 <img v-if="flags.includes(movie.original_language)" class="language" :src="'flags/flag_' + movie.original_language + '.png'" alt="">
-                                <img v-else src="flags/International_Flag_of_Planet_Earth.svg.png" alt="">
+                                <img class="language" v-else src="flags/International_Flag_of_Planet_Earth.svg.png" alt="">
                             </li>
                             <li>
-                                <h3 >Voto</h3> : {{movie.vote_average}}
+                                <h3 >Voto</h3> 
+                                <i v-for ="n in parseInt(getVoto(movie.vote_average))" class="fas fa-star"></i>
                             </li>
-                            <li class="line_clamp4">
-                                <h3 >Overview</h3> : {{movie.overview}}
+                            <li class="line_clamp6" v-if="movie.overview">
+                                <h3 >Overview </h3> 
+                                {{movie.overview}}
                             </li>
                         </ul>
                     </div>     

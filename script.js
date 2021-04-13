@@ -6,33 +6,27 @@ var app_Vue = new Vue (
     {
         el : "#app_Vue",
         data : {
-            
-            show_error : true,
-            api_key : '44c0abd41cd7f15ce525a6fdbc83e665',
-            language : "it-IT",
+
             movies : [],
+            params: {
+                api_key : '44c0abd41cd7f15ce525a6fdbc83e665',
+                query: "e",
+                language : "it-IT",
+            },
+
             flag : "",
             flags : [   'en', 'br', 'cn', 'da', 'de', 'en',
                         'es', 'fi', 'fr', 'gr', 'it', 'ja', 
                         'il', 'ko', 'nl', 'ko', 'no', 'pl', 
                         'pt', 'ru', 'se', 'sv', 'tr'
-            ],
-            params: {
-                api_key : '44c0abd41cd7f15ce525a6fdbc83e665',
-                query: "",
-                language : "it-IT",
-            }
+                     ],
+            star_num : 0,
+            
         },
 
         methods : {
-            // errore () {
-            //     console.log("eHELLO");
-            //     this.movies = [];
-
-            // },
             startSearch() {
                 if (this.params.query){
-
                     axios.get("https://api.themoviedb.org/3/search/movie",
                         {
                             params : this.params,
@@ -47,11 +41,20 @@ var app_Vue = new Vue (
 
                         }
                     ).then((answer) => {
+                        
                         this.movies.push(...answer.data.results);       
                         }
                     );
                 }//?chiudo l'if
-            } //?finisce la funzione startSearch
+            }, //?finisce la funzione startSearch
+
+            getVoto : (num) => {
+                num = num / 2
+                this.star_num = num.toFixed();
+                console.log(this.star_num, num)
+                return this.star_num;
+            }
+            
         }, // ? finiscono i methods
         mounted: function () {
             console.log("23");
