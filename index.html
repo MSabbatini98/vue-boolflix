@@ -43,7 +43,12 @@
                 <div class="movie_card" v-for="movie in movies">
                     <ul>
                         <li class="line_clamp2">
-                            <b >Titolo : </b> {{movie.title}}
+                            <span v-if ="movie.title">
+                                <b >Titolo : </b> {{movie.title}}
+                            </span> 
+                            <span v-if="movie.name">
+                                AAAAAAAAAAAAAAAAAAAAAAAAAAAA {{movie.name}}
+                            </span>
                         </li>
                         <li class="line_clamp2">
                             <b >Titolo originale : </b> {{movie.original_title}}
