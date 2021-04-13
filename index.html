@@ -23,7 +23,6 @@
     
 </head>
 <body>
-
     <div id="app_Vue">
         <header>
             <div class="header_content">
@@ -32,14 +31,14 @@
                 </div>
                 <div class="search">
                     <label for="search_bar" > Inserisci il film da cercare</label>
-                    <input type="text" id="search_bar" placeholder="Cerca un film" v-model = "user_input" @keyup.enter="startSearch">
+                    <input type="text" id="search_bar" placeholder="Cerca un film" v-model = "params.query" @keyup.enter="startSearch">
                     <button @click="startSearch"> Cerca </button>
                 </div>
             </div>
         </header>
 
         <main>
-            <div class="movie_container"  v-if="user_input">
+            <div class="movie_container"  v-if="params.query">
                 <div class="movie_card" v-for="movie in movies">
                     <ul>
                         <li class="line_clamp2">
@@ -65,7 +64,7 @@
                     </ul>
                 </div>
             </div>
-            <div v-else-if="!user_input" class="error_message">
+            <div v-else-if="!params.query" class="error_message">
                 <!-- todo add in css -->
                 <h2 > Cerca il film/serie tv ! </h2>
             </div>
