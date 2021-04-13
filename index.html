@@ -49,7 +49,7 @@
                             <b >Titolo originale : </b> {{movie.original_title}}
                         </li>
                         <li>
-                            <b> Lingua </b> : {{movie.original_language}}
+                            <b> Lingua </b> : <img class="language" :src="'flags/flag_' + movie.original_language + '.png'" alt="">
                         </li>
                         <li>
                             <b >Voto</b> : {{movie.vote_average}}
@@ -66,8 +66,10 @@
     </div>
 
 
+    <div class="here_but_not">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
     <!-- File JavaScript da mettere a fine HTML-->
     <script src="script.js" charset="utf-8"></script>     
 </body>
 </html>
+
