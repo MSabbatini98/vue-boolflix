@@ -58,8 +58,9 @@ var app_Vue = new Vue (
             },
             svuotaMovie() {
                 console.log("HELOTHERE");
-                this.movie = [];
-                this.query = "";
+                // this.movie = [];
+                // this.query = "";
+                window.location.reload()
             }
             
         }, // ? finiscono i methods
