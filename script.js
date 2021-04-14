@@ -10,7 +10,7 @@ var app_Vue = new Vue (
             movies : [],
             params: {
                 api_key : '44c0abd41cd7f15ce525a6fdbc83e665',
-                query: "e",
+                query: "",
                 language : "it-IT",
             },
 
@@ -27,6 +27,8 @@ var app_Vue = new Vue (
         methods : {
             startSearch() {
                 if (this.params.query){
+
+                    this.movies = [];
                     axios.get("https://api.themoviedb.org/3/search/movie",
                         {
                             params : this.params,

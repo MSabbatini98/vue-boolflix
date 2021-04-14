@@ -27,7 +27,7 @@
         <header>
             <div class="header_content">
                 <div class="logo_img">
-                    <img src="img/drawing_logo.svg" alt="Logo BOOLFLIX">
+                    <img src="img/drawing_logo.svg" alt="Homemade Logo BOOLFLIX">
                 </div>
                 <div class="search">
                     <label for="search_bar" > Inserisci il film da cercare</label>
@@ -58,13 +58,18 @@
                                 <img v-if="flags.includes(movie.original_language)" class="language" :src="'flags/flag_' + movie.original_language + '.png'" alt="">
                                 <img class="language" v-else src="flags/International_Flag_of_Planet_Earth.svg.png" alt="">
                             </li>
-                            <li>
+                            <li v-if="movie.vote_average" >
                                 <h3 >Voto</h3> 
-                                <i v-for ="n in parseInt(getVoto(movie.vote_average))" class="fas fa-star"></i>
+                                <div class="voto_star">
+                                    <i v-for ="n in parseInt(getVoto(movie.vote_average))" class="fas fa-star"></i>
+                                </div>
+                                
                             </li>
                             <li class="line_clamp6" v-if="movie.overview">
                                 <h3 >Overview </h3> 
-                                {{movie.overview}}
+                                 <p>
+                                    {{movie.overview}}
+                                 </p>
                             </li>
                         </ul>
                     </div>     
@@ -72,7 +77,7 @@
             </div>
             <div v-else-if="!params.query" class="error_message">
                 <!-- todo add in css -->
-                <h2 > Cerca il film/serie tv ! </h2>
+                <h2 > Cerca il tuo film o la tua serie tv preferita !  </h2>
             </div>
            
         </main>

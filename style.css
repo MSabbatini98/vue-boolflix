@@ -8,21 +8,28 @@ body {
 
 }
 /************************************************ HEADER */
-header{
+/* header *{
+    border: blue solid 1px;
+} */
+header {
     background-color: black;
+
 }
 .header_content{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     max-width: 1500px;
-    border: blue solid 1px;
     margin: auto;
     height: 80px;
     overflow-y: hidden;
 }
+.logo_img{
+    width: 15%;
+}
 .logo_img img{
     height: 250px;
+    width: 100%;
     margin: -125px 0 0 -100px;
     transform: scale(0.2);
     transform: translate(100px, 50px);
@@ -73,39 +80,54 @@ main{
 .card {
     height: 345px;
     width: 230px;
-        border: 2px white solid;
+        /* border: 2px white solid; */
     margin: 20px;
     position: relative;
     padding: 10px 5px;
     text-align: center;
+    overflow: hidden;
 }
 
 .overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #008CBA;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: crimson;
+    opacity :0.9 ;
     overflow: hidden;
-    width: 100%;
+    width: calc(100% - 10px);
     height: 0;
     transition: .5s ease;
+    padding: 0 5px;
 }
   
 .card:hover .overlay {
-    height: 100%;
+    height: calc(100% - 14px);
 }
 .poster {
     display: block;
     width: 100%;
     height: auto;
 }
+.card ul {
+    height: 100%;
+}
 .card ul li {
     font-weight: normal;
     list-style: none;
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
+.fa-star {
+    padding: 5px 7px;
+    color: yellow;
+}
+.voto_star {
+    background-color: black;
+    border-radius: 10px;
+    margin: 0 20px;
+}
 
 .line_clamp2 {
     display: -webkit-box;
@@ -119,16 +141,27 @@ main{
     -webkit-box-orient: vertical;  
     overflow: hidden;
 }
+.line_clamp6 p {
+    text-align: start;
+
+}
 .language{
     width:30px;
     margin: -7px 0;
 }
 
 
+/* ?????????????????????????????  messaggio di errore */
 
-
-
-
+.error_message{
+    width: 50%;
+    font-size: 35px;
+    text-align: center;
+    color: crimson;
+    margin: auto;
+    text-shadow: 0px 3px 2px rgb(109, 0, 0);
+    margin-top: 100px;
+}
 .here_but_not {
     display: none;
 }
