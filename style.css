@@ -24,8 +24,10 @@ header {
     height: 80px;
     overflow-y: hidden;
 }
+/* ????????????????????????????? logo */
 .logo_img{
     width: 15%;
+    cursor: pointer;
 }
 .logo_img img{
     height: 250px;
@@ -33,6 +35,26 @@ header {
     margin: -125px 0 0 -100px;
     transform: scale(0.2);
     transform: translate(100px, 50px);
+}
+/* ????????????????????????????? nav_bar */
+.nav_bar {
+    font-size: 20px;
+    align-self: center;
+    color: white;
+}
+.nav_bar ul li{
+    padding: 0 10px;
+    margin: 0 15px;
+    cursor: pointer;
+    display: inline-block;
+    list-style: none;
+
+}
+.nav_bar ul li:hover{
+    color: crimson;
+    border: crimson 2px solid;
+    transform: scale(1.5);
+    border-radius: 10px;
 }
 /* ????????????????????????????? search */
 .search{
@@ -58,10 +80,10 @@ header {
     font-weight: bolder;
     margin-right: 100px;
     color: crimson;
-
 }
+
 label {
-    visibility: hidden;
+    display: none;
 }
 
 /************************************************ MAIN */

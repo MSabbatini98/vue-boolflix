@@ -26,8 +26,18 @@
     <div id="app_Vue">
         <header>
             <div class="header_content">
-                <div class="logo_img">
-                    <img src="img/drawing_logo.svg" alt="Homemade Logo BOOLFLIX">
+                <div @click="svuotaMovie" class="logo_img">
+                    <img  src="img/drawing_logo.svg" alt="Homemade Logo BOOLFLIX">
+                </div>
+                <div class="nav_bar">
+                    <nav>
+                        <ul>
+                            <li> Serie TV </li>
+                            <li> Movies </li>
+                            <li> Top 10 </li>
+                            <li> Most Viewed </li>
+                        </ul>
+                    </nav>
                 </div>
                 <div class="search">
                     <label for="search_bar" > Inserisci il film da cercare</label>
@@ -41,7 +51,6 @@
             <div class="movie_container"  v-if="params.query">
                 <div class="card " v-for="movie in movies">
 
-                    <!-- <img src="img/not_found.PNG"> -->
                     <img class ="poster" :src=" movie.poster_path ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path : 'img/not_found.PNG' " alt=" poster del film di cui il titolo">
                     <div class="overlay">
                         <ul>
@@ -76,7 +85,6 @@
                 </div>
             </div>
             <div v-else-if="!params.query" class="error_message">
-                <!-- todo add in css -->
                 <h2 > Cerca il tuo film o la tua serie tv preferita !  </h2>
             </div>
            

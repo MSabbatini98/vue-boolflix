@@ -55,6 +55,11 @@ var app_Vue = new Vue (
                 this.star_num = num.toFixed();
                 console.log(this.star_num, num)
                 return this.star_num;
+            },
+            svuotaMovie() {
+                console.log("HELOTHERE");
+                this.movie = [];
+                this.query = "";
             }
             
         }, // ? finiscono i methods
