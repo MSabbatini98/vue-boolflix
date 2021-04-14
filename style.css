@@ -133,14 +133,22 @@ main{
     height: auto;
 }
 .card ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     height: 100%;
 }
 .card ul li {
     font-weight: normal;
     list-style: none;
-    margin: 10px 0;
+    margin: 8px 0;
 }
-
+p.title {
+    font-size: 19px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: white;
+} 
 .fa-star {
     padding: 5px 7px;
     color: yellow;

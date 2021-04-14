@@ -56,7 +56,9 @@
                         <ul>
                             <li class="line_clamp2">
                                 <h3 >Titolo : </h3> 
-                                {{movie.title || movie.name}}
+                                <p class="title">
+                                    {{movie.title || movie.name}}
+                                </p>
                             </li>
                             <li class="line_clamp2" v-if="movie.original_title">
                                 <h3 >Titolo originale : </h3> 
@@ -74,7 +76,7 @@
                                 </div>
                                 
                             </li>
-                            <li class="line_clamp6" v-if="movie.overview">
+                            <li class="line_clamp6 " v-if="movie.overview">
                                 <h3 >Overview </h3> 
                                  <p>
                                     {{movie.overview}}
