@@ -53,14 +53,13 @@ var app_Vue = new Vue (
             getVoto : (num) => {
                 num = num / 2
                 this.star_num = num.toFixed();
-                console.log(this.star_num, num)
+                // console.log(this.star_num, num)
                 return this.star_num;
             },
             svuotaMovie() {
                 console.log("HELOTHERE");
-                // this.movie = [];
-                // this.query = "";
-                window.location.reload()
+                this.movies = [];
+                this.params.query = "";
             }
             
         }, // ? finiscono i methods
